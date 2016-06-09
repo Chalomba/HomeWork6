@@ -2,21 +2,49 @@
 
 import UIKit
 
-class Driver{
+class Person{
     var name: String
     var age: Int
     
-    init (driverName: String, driverAge: Int){
-        name = driverName
-        age = driverAge
+    init (name: String, age: Int){
+        self.name = name
+        self.age = age
     }
 }
-let driver1 = Driver (driverName: "Misha", driverAge: 25)
-let driver2 = Driver (driverName: "Stepa", driverAge: 24)
-let driver3 = Driver (driverName: "Petya", driverAge: 28)
-let driver4 = Driver (driverName: "Sasha", driverAge: 22)
-let driver5 = Driver (driverName: "Vitya", driverAge: 21)
+let person1 = Person (name: "Misha", age: 25)
+let person2 = Person (name: "Stepa", age: 24)
+let person3 = Person (name: "Petya", age: 57)
+let person4 = Person (name: "Sasha", age: 50)
+
+
+var persons = [ person1, person2, person3, person4]
+
 
 class Car{
-    var
+    var driver: Person
+    var brand: String
+    var maxSpeed: Int
+   
+    
+    init (driver: Person, brand: String, maxSpeed: Int){
+        self.driver = driver
+        self.brand = brand
+        self.maxSpeed = maxSpeed
+    }
+    
+    
 }
+
+let car1 = Car (driver: person4, brand: "BMW", maxSpeed: 230)
+let car2 = Car (driver: person2, brand: "Lexus", maxSpeed: 280)
+let car3 = Car (driver: person1, brand: "Honda", maxSpeed: 270)
+let car4 = Car (driver: person3, brand: "Audi", maxSpeed: 260)
+
+
+var cars = [ car1, car2, car3, car4]
+
+var oldDrivers = cars.filter {$0.driver.age > 40 && $0.maxSpeed > 205}
+oldDrivers
+
+var sortAge = persons.sort {$0.age > $1.age}
+sortAge
