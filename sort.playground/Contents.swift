@@ -13,7 +13,7 @@ class Person{
 }
 let person1 = Person (name: "Misha", age: 25)
 let person2 = Person (name: "Stepa", age: 24)
-let person3 = Person (name: "Petya", age: 57)
+let person3 = Person (name: "Anna", age: 66)
 let person4 = Person (name: "Sasha", age: 50)
 
 
@@ -43,8 +43,9 @@ let car4 = Car (driver: person3, brand: "Audi", maxSpeed: 260)
 
 var cars = [ car1, car2, car3, car4]
 
-var oldDrivers = cars.filter {$0.driver.age > 40 && $0.maxSpeed > 205}
+var oldDrivers = cars.filter {$0.driver.age > 44 && $0.maxSpeed > 240}
 oldDrivers
 
 var sortAge = persons.sort {$0.age > $1.age}
 sortAge
+
